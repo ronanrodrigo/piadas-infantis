@@ -117,5 +117,8 @@ window.JOKES = [
   { question: "O que é, o que é? Pode ter cobertura e aparece em festas de aniversário?", answer: "O bolo." },
   { question: "O que é, o que é? Tem massa redonda, queijo e muitos sabores?", answer: "A pizza." },
   { question: "O que é, o que é? É gelado, doce e pode derreter no sol?", answer: "O sorvete." },
-  { question: "O que é, o que é? Cresce no forno e costuma ser cortado em fatias?", answer: "O pão." }
+  { question: "O que é, o que é? Cresce no forno e costuma ser cortado em fatias?", answer: "O pão." },
+  { question: "O que é, o que é? Tem casca dura e miolo branco?", answer: "O coco." },
+  { question: "O que é, o que é? É pequena, roxa ou verde e cresce em cachos?", answer: "A uva." },
+  { question: "O que é, o que é? Tem muitas sementes por fora?", answer: "O morango." }
 ];
