@@ -24,11 +24,8 @@
     { question: "O que é, o que é? Está sempre na sua frente, mas você nunca consegue ver?", answer: "O futuro." }
   ];
   const jokes = Array.isArray(window.JOKES) && window.JOKES.length ? window.JOKES : fallbackJokes;
-  const loading = document.querySelector("#joke-loading");
-  const content = document.querySelector("#joke-content");
   const question = document.querySelector("#joke-heading");
   const answer = document.querySelector("#joke-answer");
-  const answerBox = document.querySelector("#answer-box");
   const revealButton = document.querySelector("#reveal-button");
   const newJokeButton = document.querySelector("#new-joke-button");
   let currentIndex = -1;
@@ -45,17 +42,13 @@
     const joke = jokes[currentIndex];
     question.textContent = joke.question;
     answer.textContent = joke.answer;
-    answerBox.hidden = true;
-    revealButton.hidden = false;
+    answer.hidden = true;
     revealButton.disabled = false;
     revealButton.textContent = "Mostrar continuação";
-    newJokeButton.hidden = false;
-    loading.hidden = true;
-    content.hidden = false;
   };
 
   revealButton.addEventListener("click", () => {
-    answerBox.hidden = false;
+    answer.hidden = false;
     revealButton.disabled = true;
     revealButton.textContent = "Continuação mostrada";
   });

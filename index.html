@@ -6,22 +6,19 @@
     <meta name="theme-color" content="#fff8e9" />
     <meta name="description" content="Uma piada infantil por vez." />
     <title>Rir & Brincar</title>
-    <link rel="stylesheet" href="styles.css?v=3" />
-    <script src="jokes.js?v=3" defer></script>
-    <script src="app.js?v=3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script src="jokes.js?v=4" defer></script>
+    <script src="app.js?v=4" defer></script>
   </head>
   <body>
-    <main class="joke-card" aria-labelledby="joke-heading">
-      <div id="joke-loading" class="loading-state" role="status">Carregando...</div>
-      <div id="joke-content" hidden>
+    <main class="joke" aria-labelledby="joke-heading">
+      <div id="joke-content">
         <h1 id="joke-heading" class="question"></h1>
-        <div id="answer-box" class="answer-box" hidden>
-          <p id="joke-answer" class="answer"></p>
-        </div>
+        <p id="joke-answer" class="answer" hidden></p>
       </div>
       <div class="actions">
-        <button id="reveal-button" class="button button-primary" type="button" hidden>Mostrar continuação</button>
-        <button id="new-joke-button" class="button button-secondary" type="button" hidden>Próxima</button>
+        <button id="reveal-button" class="button button-primary" type="button">Mostrar continuação</button>
+        <button id="new-joke-button" class="button button-secondary" type="button">Próxima</button>
       </div>
     </main>
   </body>
