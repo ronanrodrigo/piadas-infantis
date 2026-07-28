@@ -3,90 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fff7e6" />
-    <meta name="description" content="Uma adivinha divertida para crianças em cada acesso." />
-    <title>Rir & Brincar — Uma piada por vez</title>
+    <meta name="theme-color" content="#fff8e9" />
+    <meta name="description" content="Uma piada infantil por vez." />
+    <title>Rir & Brincar</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="jokes.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="Rir e Brincar, início">
-        <span class="brand-mark" aria-hidden="true">😄</span>
-        <span>Rir &amp; Brincar</span>
-      </a>
-      <span class="header-note">Diversão simples para toda a família</span>
-    </header>
+    <main class="joke-card" aria-labelledby="joke-heading">
+      <div id="joke-loading" class="loading-state" role="status">😄</div>
 
-    <main class="page-shell">
-      <section class="intro" aria-labelledby="page-title">
-        <p class="eyebrow">PIADA SURPRESA</p>
-        <h1 id="page-title">Pronto para dar risada?</h1>
-        <p class="intro-copy">
-          Em cada visita aparece uma adivinha diferente. Leia a pergunta, tente
-          descobrir e revele a resposta!
-        </p>
-      </section>
-
-      <section class="joke-card" aria-labelledby="joke-heading">
-        <div class="confetti confetti-one" aria-hidden="true">✦</div>
-        <div class="confetti confetti-two" aria-hidden="true">●</div>
-        <div class="joke-card-topline">
-          <span class="joke-label">Adivinha do momento</span>
-          <span id="joke-counter" class="joke-counter" aria-live="polite"></span>
+      <div id="joke-content" hidden>
+        <h1 id="joke-heading" class="question"></h1>
+        <div id="answer-box" class="answer-box" hidden>
+          <p id="joke-answer" class="answer"></p>
         </div>
+      </div>
 
-        <div id="joke-loading" class="loading-state" role="status">
-          Escolhendo uma pergunta divertida…
-        </div>
-        <div id="joke-content" hidden>
-          <h2 id="joke-heading" class="question"></h2>
-          <div id="answer-box" class="answer-box" hidden>
-            <span class="answer-label">Resposta</span>
-            <p id="joke-answer" class="answer"></p>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button id="reveal-button" class="button button-primary" type="button" hidden>
-            <span aria-hidden="true">👀</span> Ver resposta
-          </button>
-          <button id="new-joke-button" class="button button-secondary" type="button" hidden>
-            <span aria-hidden="true">🎲</span> Outra piada
-          </button>
-        </div>
-        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
-      </section>
-
-      <section class="how-it-works" aria-labelledby="how-title">
-        <h2 id="how-title">Como brincar</h2>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <p><strong>Pense</strong><br />Leia a pergunta com atenção.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <p><strong>Arrisque</strong><br />Conte sua resposta para alguém.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <p><strong>Descubra</strong><br />Toque no botão e confira.</p>
-          </div>
-        </div>
-      </section>
-
-      <p class="content-note">
-        Conjunto inicial com adivinhas tradicionais, sem reprodução do artigo indicado.
-        <a href="https://selecoes.ig.com.br/humor/piadas-de-crianca-para-contar-e-dar-boas-risadas/amp/" target="_blank" rel="noreferrer">Conheça a referência editorial</a>.
-      </p>
+      <div class="actions">
+        <button id="reveal-button" class="button button-primary" type="button" hidden>
+          Mostrar continuação
+        </button>
+        <button id="new-joke-button" class="button button-secondary" type="button" hidden>
+          Próxima
+        </button>
+      </div>
     </main>
-
-    <footer class="site-footer">
-      <span>Feito para crianças, famílias e momentos de alegria.</span>
-      <button id="share-button" class="text-button" type="button">Compartilhar</button>
-      <a class="text-button" href="https://github.com/ronanrodrigo/piadas-infantis" target="_blank" rel="noreferrer">Código-fonte</a>
-    </footer>
   </body>
 </html>
