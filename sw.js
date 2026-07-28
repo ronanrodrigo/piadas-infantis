@@ -1,28 +1,22 @@
-const CACHE_NAME = "rir-brincar-v1";
+const CACHE_NAME = "rir-brincar-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=5",
+  "./styles.css?v=6",
   "./jokes.js?v=5",
   "./app.js?v=4",
   "./sw.js"
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
+      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
     )
   );
   self.clients.claim();
