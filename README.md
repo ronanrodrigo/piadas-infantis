@@ -46,12 +46,20 @@ Depois, acesse `http://localhost:8000`.
 
 ## Como publicar no GitHub Pages
 
-1. Abra **Settings > Pages** no repositório.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Escolha a branch `main` e a pasta `/ (root)`.
-4. Salve e aguarde a publicação.
+O repositório já contém o workflow `.github/workflows/pages.yml`. Antes da primeira execução, é necessário ativar o Pages no repositório:
+
+1. Abra **Settings > Pages**.
+2. Em **Build and deployment > Source**, selecione **GitHub Actions**.
+3. Volte à aba **Actions** e execute novamente o workflow **Publicar no GitHub Pages** usando **Run workflow**, ou faça um novo push na branch `main`.
+4. Aguarde as etapas **Configurar Pages**, **Preparar artefato** e **Publicar** terminarem com sucesso.
 
 A URL esperada será `https://ronanrodrigo.github.io/piadas-infantis/`.
+
+### Erro de configuração do Pages
+
+Se a etapa **Configurar Pages** falhar com erro de configuração ou `Get Pages site failed`, o Pages ainda não foi ativado no menu **Settings > Pages** ou a fonte não está configurada como **GitHub Actions**. Esse é um requisito do GitHub e não pode ser habilitado pelo arquivo do projeto.
+
+O aviso sobre descontinuação do Node.js 20 nas actions é apenas um aviso de compatibilidade e não é a causa principal dessa falha.
 
 ## Limitações e próximos passos
 
