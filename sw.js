@@ -1,8 +1,8 @@
-const CACHE_NAME = "rir-brincar-v2";
+const CACHE_NAME = "rir-brincar-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=6",
+  "./styles.css?v=7",
   "./jokes.js?v=5",
   "./app.js?v=4",
   "./sw.js"

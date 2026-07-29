@@ -7,6 +7,7 @@
   --white: #fffaf0;
   --blue: #a8c4c5;
   --blue-dark: #789b9d;
+  --footer-space: 6.5rem;
 }
 
 * {
@@ -24,7 +25,6 @@ body {
 
 body {
   position: relative;
-  padding: 1.25rem;
   color: var(--ink);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background: var(--cream);
@@ -32,16 +32,20 @@ body {
 
 .joke {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
+  display: grid;
   width: min(720px, calc(100% - 2rem));
+  height: calc(100% - var(--footer-space));
+  place-items: center;
+  padding: 1.25rem;
   text-align: center;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
 .question {
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0;
   color: var(--ink);
   font-size: clamp(1.8rem, 5vw, 3.2rem);
   line-height: 1.14;
@@ -59,12 +63,16 @@ body {
 
 .actions {
   position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  left: 1.25rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
   display: flex;
   justify-content: center;
   gap: 0.8rem;
+  min-height: var(--footer-space);
+  padding: 1rem 1.25rem 1.25rem;
+  background: var(--cream);
 }
 
 .button {
@@ -108,12 +116,13 @@ body {
 }
 
 @media (max-width: 520px) {
-  body {
-    padding: 1rem;
+  :root {
+    --footer-space: 9.5rem;
   }
 
   .joke {
-    width: calc(100% - 1rem);
+    width: 100%;
+    padding: 1rem;
   }
 
   .question {
@@ -121,10 +130,8 @@ body {
   }
 
   .actions {
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
     flex-direction: column;
+    padding: 0.75rem 1rem 1rem;
   }
 
   .button {
