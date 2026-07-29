@@ -23,8 +23,7 @@ body {
 }
 
 body {
-  display: grid;
-  place-items: center;
+  position: relative;
   padding: 1.25rem;
   color: var(--ink);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
@@ -32,13 +31,17 @@ body {
 }
 
 .joke {
-  width: min(720px, 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(720px, calc(100% - 2rem));
   text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 .question {
   max-width: 680px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   color: var(--ink);
   font-size: clamp(1.8rem, 5vw, 3.2rem);
   line-height: 1.14;
@@ -47,7 +50,7 @@ body {
 
 .answer {
   max-width: 680px;
-  margin: 0 auto 2rem;
+  margin: 1.25rem auto 0;
   color: var(--ink);
   font-size: clamp(1.45rem, 4vw, 2rem);
   font-weight: 800;
@@ -55,6 +58,10 @@ body {
 }
 
 .actions {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
   display: flex;
   justify-content: center;
   gap: 0.8rem;
@@ -105,12 +112,18 @@ body {
     padding: 1rem;
   }
 
+  .joke {
+    width: calc(100% - 1rem);
+  }
+
   .question {
-    margin-bottom: 1.5rem;
     font-size: clamp(1.7rem, 8vw, 2.5rem);
   }
 
   .actions {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
     flex-direction: column;
   }
 
